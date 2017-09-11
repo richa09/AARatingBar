@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol AARatingBarDelegate : class{
+public protocol AARatingBarDelegate : class{
     func ratingChangedWith(value : CGFloat)
 }
 
