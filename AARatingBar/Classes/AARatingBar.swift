@@ -9,8 +9,14 @@
 import UIKit
 
 
+protocol AARatingBarDelegate : class{
+    func ratingChangedWith(value : CGFloat)
+}
+
 @IBDesignable open class AARatingBar: UIView {
     
+    var delegate : AARatingBarDelegate?
+
     /// AARatingBar filled icon
     @IBInspectable open var filledIcon: String = "★" {
         didSet {
@@ -203,5 +209,7 @@ import UIKit
     func ratingValueChange() {
         let rating = bounds.size.width * value / _maxValue
         self.filledView.frame.size.width = rating
+        
+        self.delegate?.ratingChangedWith(value: self.value)
     }
 }
