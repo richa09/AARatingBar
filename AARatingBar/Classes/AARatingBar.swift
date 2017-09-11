@@ -15,7 +15,7 @@ public protocol AARatingBarDelegate : class{
 
 @IBDesignable open class AARatingBar: UIView {
     
-    var delegate : AARatingBarDelegate?
+    public var delegate : AARatingBarDelegate?
 
     /// AARatingBar filled icon
     @IBInspectable open var filledIcon: String = "★" {
